@@ -36,6 +36,13 @@ class Locators():
     Date = By.XPATH, '//input[@id="datepicker"]'
 
     DragAndDrop = By.XPATH, '(//a[@class="btn btn-lg"])[5]'
+    # source_location = By.ID, 'image'
+    # destination_location = By.ID, 'box'
+
+    # https: // www.globalsqa.com / demo - site / draganddrop /
+    source_location = By.XPATH, '//ul[@id="gallery"]/li[4]'
+    destination_location = By.ID, 'trash'
+    iframe = By.XPATH, '//iframe[@class="demo-frame lazyloaded"]'
 
     DropDown = By.XPATH, '(//a[@class="btn btn-lg"])[6]'
     DropDownButton = By.XPATH, '//button[@id="dropdownMenuButton"]'

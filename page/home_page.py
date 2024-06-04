@@ -290,3 +290,13 @@ class HomePage(BasePage):
 
     def click_submit_button(self):
         self.click_element(self.locator.Click_on_submit_button)
+
+    def click_on_drag_and_drop_button(self):
+        self.click_element(self.locator.DragAndDrop)
+
+    def perform_drag_and_drop(self):
+        self.drag_and_drop(self.locator.source_location, self.locator.destination_location)
+
+    #https://www.globalsqa.com/demo-site/draganddrop/
+    def switch_to_drag_and_drop_iframe(self):
+        self.switch_to_iframe(self.locator.iframe)

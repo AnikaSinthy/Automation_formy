@@ -153,3 +153,20 @@ class TestCase(BaseTest):
         time.sleep(2)
         tc.click_submit_button()
 
+    def test_drag_and_drop(self):
+        dd = HomePage(self.driver)
+        dd.click_on_drag_and_drop_button()
+        time.sleep(2)
+        dd.perform_drag_and_drop()
+        time.sleep(2)
+
+
+    #https://www.globalsqa.com/demo-site/draganddrop/
+    def test_drag_and_drop2(self):
+        dd = HomePage(self.driver)
+        time.sleep(2)
+        dd.switch_to_drag_and_drop_iframe()
+        time.sleep(2)
+        dd.perform_drag_and_drop()
+        time.sleep(2)
+

@@ -39,3 +39,12 @@ class BasePage():
         alert = self.driver.switch_to.alert
         alert.accept()
 
+    def drag_and_drop(self, source_location, destination_location):
+        drag = self.get_element(source_location)
+        drop = self.get_element(destination_location)
+        action = ActionChains(self.driver)
+        action.drag_and_drop(drag, drop).perform()
+
+    def switch_to_iframe(self, locator):
+        self.driver.switch_to.frame(self.get_element(locator))
+
