@@ -60,7 +60,7 @@ class Locators():
     date = By.XPATH, '//input[@id="date"]'
 
     RadioButton = By.XPATH, '(//a[@class="btn btn-lg"])[12]'
-    RadioButton1 = By.XPATH, '(//label[@class="form-check-label"])[1]'
+    RadioButton1 = By.ID, 'radio-button-1'
     RadioButton2 = By.XPATH, '(//label[@class="form-check-label"])[2]'
     RadioButton3 = By.XPATH, '(//label[@class="form-check-label"])[3]'
 
@@ -78,6 +78,6 @@ class Locators():
     Male = By.ID, 'checkbox-1'
     Female = By.ID, 'checkbox-2'
     Not_prefer = By.ID, 'checkbox-3'
-    Experience = By.XPATH,'//select[@fdprocessedid="o0sucm"]'
+    Experience = By.ID,'select-menu'
     date_1 = By.XPATH, '//input[@id="datepicker"]'
     Click_on_submit_button = By.XPATH, '//a[@class="btn btn-lg btn-primary"]'

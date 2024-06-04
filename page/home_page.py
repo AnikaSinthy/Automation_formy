@@ -279,7 +279,7 @@ class HomePage(BasePage):
         self.click_element(self.locator.Not_prefer)
 
     def select_number(self):
-        self.select_by_index(self.locator.Experience, index="0-1")
+        self.select_by_value(self.locator.Experience, "1")
 
     def click_date_1(self):
         self.click_element(self.locator.date_1)
