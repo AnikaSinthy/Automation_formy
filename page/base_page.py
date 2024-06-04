@@ -1,3 +1,4 @@
+from selenium.webdriver import ActionChains
 from selenium.webdriver.support.select import Select
 
 
@@ -11,6 +12,11 @@ class BasePage():
 
     def click_element(self, locator):
         self.get_element(locator).click()
+
+    def click_element_by_mouse(self, locator):
+        action = ActionChains(self.driver)
+        element = self.get_element(locator)
+        action.move_to_element(element).click().perform()
 
     def enter_at(self, locator, data):
         self.get_element(locator).send_keys(data)

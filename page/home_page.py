@@ -177,7 +177,8 @@ class HomePage(BasePage):
         self.enter_at(self.locator.full_name, name)
 
     def click_button(self):
-        self.click_element(self.locator.button_name)
+        # self.click_element(self.locator.button_name)
+        self.click_element_by_mouse(self.locator.button_name)
 
     def click_modal(self):
         self.click_element(self.locator.Modal)
