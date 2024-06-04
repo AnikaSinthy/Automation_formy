@@ -122,6 +122,14 @@ class TestCase(BaseTest):
         time.sleep(2)
         tc.click_tab()
         time.sleep(2)
+        tc.switch_to_active_tab()
+        time.sleep(2)
+        tc.click_switch()
+        time.sleep(2)
+        tc.click_alert()
+        time.sleep(2)
+        tc.accept_alert()
+        time.sleep(2)
 
     def test_web(self):
         tc = HomePage(self.driver)

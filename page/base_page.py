@@ -31,3 +31,11 @@ class BasePage():
     def select_by_index(self, locator, index):
         select = Select(self.get_element(locator))
         select.select_by_index(index)
+
+    def switch_to_active_tab(self):
+        self.driver.switch_to.window(self.driver.window_handles[1])
+
+    def accept_alert(self):
+        alert = self.driver.switch_to.alert
+        alert.accept()
+
