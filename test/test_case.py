@@ -1,5 +1,7 @@
 import time
 
+import pytest
+
 from page.home_page import HomePage
 from test.base_test import BaseTest
 
@@ -7,6 +9,7 @@ from data.data import TestData as DATA
 
 
 class TestCase(BaseTest):
+    @pytest.mark.sanity
     def test_autocomplete(self):
         tc = HomePage(self.driver)
         tc.click_autocomplete()
@@ -19,6 +22,7 @@ class TestCase(BaseTest):
         tc.enter_country(DATA.country)
         time.sleep(5)
 
+    @pytest.mark.regression
     def test_buttons(self):
         tc = HomePage(self.driver)
         tc.click_buttons()
@@ -30,13 +34,15 @@ class TestCase(BaseTest):
         tc.click_drop_down_link1()
         time.sleep(2)
 
+    @pytest.mark.sanity
     def test_checkbox(self):
         tc = HomePage(self.driver)
         tc.click_checkbox()
         tc.select_checkboxes()
         time.sleep(2)
-        assert tc.assert_checkboxes() == True
+        assert tc.assert_checkboxes() == (True, True)
 
+    @pytest.mark.regression
     def test_checkbox1(self):
         tc = HomePage(self.driver)
         tc.click_checkbox()
@@ -70,6 +76,7 @@ class TestCase(BaseTest):
         tc.enter_input(DATA.input)
         time.sleep(1)
 
+    @pytest.mark.sanity
     def test_file(self):
         tc = HomePage(self.driver)
         tc.click_file()
@@ -160,8 +167,7 @@ class TestCase(BaseTest):
         dd.perform_drag_and_drop()
         time.sleep(2)
 
-
-    #https://www.globalsqa.com/demo-site/draganddrop/
+    # https://www.globalsqa.com/demo-site/draganddrop/
     def test_drag_and_drop2(self):
         dd = HomePage(self.driver)
         time.sleep(2)
@@ -169,4 +175,3 @@ class TestCase(BaseTest):
         time.sleep(2)
         dd.perform_drag_and_drop()
         time.sleep(2)
-
